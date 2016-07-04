@@ -28,12 +28,16 @@ if(($_SESSION["openid"])==null){
 }
 
 if(($_SESSION["openid"])!= null){
-
+    $time = time();
+    $tim = date("Y-m-d H:i:s", $time);
     $openid = $_SESSION["openid"];
-    $db = mysql_query("select * from ya_li where openid = '{$openid}'");
+    $nickname = $_SESSION["nickname"];
+    //用户头像，openid
+    $headimgurl = $_SESSION["headimgurl"];
+    $db = mysql_query("select * from ylq where openid = '{$openid}'");
     $res = mysql_fetch_assoc($db);
     if(!$res){
-        $res = "insert into ya_li(openid) values('{$openid}')";
+        $res = "insert into ylq(openid) values('{$openid}')";
         $re = mysql_query($res);
     }
 }
