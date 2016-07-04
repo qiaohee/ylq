@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>决战鸭梨君</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/animate.js"></script>
+	<script type="text/javascript">
+    new function (){
+       var _self = this;
+       _self.width = 750;//设置默认最大宽度
+       _self.fontSize = 100;//默认字体大小
+       _self.widthProportion = function(){var p = (document.body&&document.body.clientWidth||document.getElementsByTagName("html")[0].offsetWidth)/_self.width;return p>1?1:p<0.32?0.32:p;};
+       _self.changePage = function(){
+           document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+       }
+       _self.changePage(); 
+       window.addEventListener('resize',function(){_self.changePage();},false);
+    };
+	</script>
+</head>
+<body style="background:#5351b0">
+	
+	<!-- 背景 -->
+	<img class="p-bg" src="images/bg2.jpg" alt="">
+
+	<!-- 券列表 -->
+	<div class="voucher">
+		<ul>
+			<li>
+				<h1>500元优惠券</h1>
+				<p>购物正价消费满5000可使用</p>
+				<div class="del-t"></div>
+				<a href="javascripr:;" class="use">立即使用</a>
+			</li>
+			<li>
+				<h1>50元优惠券</h1>
+				<p>购物正价消费满5000可使用</p>
+			</li>
+			<li>
+				<h1>50元优惠券</h1>
+				<p>购物正价消费满5000可使用</p>
+			</li>
+		</ul>
+	</div>
+
+
+	<!-- form弹窗 -->
+	<div class="mask"></div>
+	<div class="form">
+		<h1>填写信息</h1>
+		<input type="text" placeholder="姓名">
+		<input type="tel" placeholder="电话">
+		<input type="text" placeholder="订单号">
+		<input type="text" placeholder="专卖单名称">
+		<input type="submit" class="btn" value="确认使用">
+	</div>
+
+	<script>
+
+		$(function(){
+
+			$('.use').click(function(event) {
+				$('.mask,.form').show()
+			});
+			$('.mask').click(function(event) {
+				$('.mask,.form').hide()
+			});
+		})
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>
